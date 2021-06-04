@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:update]
 
+  def new
+    @user = User.new #"新規の"ユーザを作成している
+  end
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -8,14 +12,16 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = current_user
     @users = User.all
     @book = Book.new
+    @books = Book.all
   end
 
   def edit
     @user = User.find(params[:id])
     if @user == current_user
-        render "edit"
+      render "edit"
     else
       redirect_to user_path(current_user.id)
     end

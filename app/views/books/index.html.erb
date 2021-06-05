@@ -1,20 +1,14 @@
-<div class='container px-5 px-sm-0'>
- <%= render 'layouts/errors', obj: @book %>
+<div class='container'>
   <div class='row'>
-    <div class='col-xs-3'>
+    <div class='col-md-3'>
       <h2>User info</h2>
       <%= render 'users/info', user: current_user %>
       <h2>New book</h2>
-      <%= render 'form', book: @newbook %>
-      
-	    <div class="actions row">
-		   <%= f.submit class: "btn btn-primary col-xs-12" %>
-	    </div>
+      <%= render 'books/form', book: @book %>
 	   </div>
-    </div>
-    <div class='col-xs-9'>
+    <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
-      <%= render 'index', book: @book %>
+      <%= render 'books/index', book: @books %>
     </div>
   </div>
 </div>

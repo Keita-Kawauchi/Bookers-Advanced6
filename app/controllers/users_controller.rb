@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :abc
   before_action :ensure_correct_user, only: [:update,:edit]
 
   def show
@@ -43,5 +44,11 @@ class UsersController < ApplicationController
      if current_user != user
        redirect_to (user_url(current_user)) unless @user == current_user
      end
+  end
+
+  def abc
+   unless user_signed_in?
+    redirect_to new_user_session_path
+   end
   end
 end

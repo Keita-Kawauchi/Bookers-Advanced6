@@ -5,6 +5,7 @@
      <%= render 'info', user: current_user %>
     <h2>New book</h2>
      <%= render 'books/form', book: @book %>
+     <%= render 'relationships/follow_button', user: @user %>
    </div>
    <div class="col-md-8 offset-md-1">
     <h2>Users</h2>

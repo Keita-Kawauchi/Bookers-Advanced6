@@ -11,7 +11,7 @@ class BookCommentsController < ApplicationController
      redirect_to book_path(@book.id)
     else
      render "books/show"
-   end
+    end
   end
 
   def destroy

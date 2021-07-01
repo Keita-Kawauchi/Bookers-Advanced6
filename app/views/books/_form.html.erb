@@ -1,5 +1,6 @@
 <%= render 'layouts/errors', obj: @book %>
 <%= form_with model: book, local: true do |f| %>
+
  <%= f.label :title %>
  <%= f.text_field :title, class: "col-xs-12 form-control book_title" %>
 
